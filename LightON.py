@@ -1,17 +1,14 @@
 import RPi.GPIO as GPIO
-import time
 GPIO.setmode(GPIO.BCM)
-pinList=[14]
-for i in pinList:
-    GPIO.setwarnings(False)
-    GPIO.setup(i,GPIO.OUT)
-    GPIO.output(i,GPIO.HIGH)
+pin = 14
+
+GPIO.setwarnings(False)
+GPIO.setup(pin, GPIO.OUT)
+GPIO.output(pin, GPIO.HIGH)
+
 
 def trigger():
-    for i in pinList:
-        GPIO.output(i,GPIO.HIGH)
-#       GPIO.cleanup()
-        break
+    GPIO.output(pin, GPIO.HIGH)
 
 try:
     trigger()
